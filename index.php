@@ -1,3 +1,25 @@
+<?php
+$cont=mysqli_connect("localhost", "root", "");
+mysqli_select_db($cont, "firsdb");
+
+$data=$_POST;
+
+if (isset($data['button_name']))
+{
+echo " <head>
+    <meta http-equiv='refresh' content='0;URL=http://localhost/drevo_project-master/loginform.php' />
+    </head>";  
+echo "</p>";
+}
+if (isset($data['button_name2']))
+{
+echo " <head>
+    <meta http-equiv='refresh' content='0;URL=http://localhost/drevo_project-master/regform.php' />
+    </head>";  
+echo "</p>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -16,11 +38,12 @@
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light blockWbg">
       <div class="col-md-5 p-lg-5 mx-auto my-5">
         <h1 class="display-4 font-weight-normal txt">Создайте генеалогическое древо своей семьи</h1>
-        <div class="container mt-5">
-          <a class="btn btn-light" href="#">Войти</a>
-          <a class="btn btn-light" href="#">Регистрация</a>
-        </div>
-
+        <form action'/regform.php' method='POST'>
+          <div class="container mt-5">
+            <button class="btn btn-light" href="#" type='submit' name='button_name'>  Войти </button>
+            <button class="btn btn-light" href="#" type='submit' name='button_name2'>  Регистрация </button>
+          </div>
+        </form> 
       </div>
       <div class="product-device shadow-sm d-none d-md-block"></div>
       <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
